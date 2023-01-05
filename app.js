@@ -13,11 +13,11 @@ app.use(middleware.logger);
 app.use("/items", itemRoutes);
 // end itemRoutes
 
-const SHOPPING_LIST = [
-    { id: 1, item: 'socks', price: 11.95 },
-    { id: 2, item: 'shirt', price: 28.89 },
-    { id: 3, item: 'hat', price: 25.15 }
-]
+// const SHOPPING_LIST = [
+//     { id: 1, item: 'socks', price: 11.95 },
+//     { id: 2, item: 'shirt', price: 28.89 },
+//     { id: 3, item: 'hat', price: 25.15 }
+// ]
 
 app.get('/', function(req, res) {
     return res.send("Shopping List");
