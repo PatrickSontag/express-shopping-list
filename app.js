@@ -1,7 +1,8 @@
 const express = require('express');
-const expressError = require('./expressError');
+const ExpressError = require('./expressError');
 const itemRoutes = require("./routes");
 const middleware = require("./middleware");
+const items = require('./fakeDb');
 
 const app = express();
 
@@ -41,8 +42,8 @@ app.get('/', function(req, res) {
 
 // 404 handler
 app.use(function(req, res) {
-    console.log("404")
-    // return new ExpressError("Not Found", 404);
+    // console.log("404")
+    return new ExpressError("Not Found", 404);
   });
 
 app.listen(3000, function() {
