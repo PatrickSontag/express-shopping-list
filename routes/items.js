@@ -33,15 +33,13 @@ router.patch("/:name", function(req, res) {
   const patchItem = items[itemIndex];
   patchItem.name = req.body.name;
   patchItem.price = req.body.price;
-  return res.json(patchItem);
+  return res.json({"updated":patchItem});
 });
 
-/** DELETE /items/[id]: delete item, return status */
-
-router.delete("/:id", function(req, res) {
-  const idx = items.findIndex(u => u.id === +req.params.id);
-  items.splice(idx, 1);
-  return res.json({ message: "Deleted" });
+router.delete("/:name", function(req, res) {
+  const itemIndex = items.findIndex(i => i.name === req.params.name);
+  items.splice(itemIndex, 1);
+  return res.json({message: "Deleted"});
 });
 
 
