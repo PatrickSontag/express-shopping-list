@@ -16,12 +16,10 @@ app.use("/items", itemRoutes);
 
 app.get('/', function(req, res) {
     return res.json(items);
-    // return res.send("Shopping List");
 });
 
 // 404 handler
 app.use(function(req, res) {
-    // console.log("404")
     return new ExpressError("Not Found", 404);
   });
 

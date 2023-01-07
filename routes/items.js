@@ -7,7 +7,6 @@ const ExpressError = require('../expressError');
 /** GET /items: get list of items */
 
 router.get("/", function(req, res) {
-  console.log("items");
   return res.json( items );
 });
 
